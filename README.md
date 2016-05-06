@@ -1,6 +1,6 @@
-#A clone of Optimizer, currently in development.
+#Optimizer
 
-Optimizer is a graphical tool for the optimization of Neuronal Models
+A recent fork of Optimizer by vellamike, which is no longer in development. Optimizer is a graphical tool for the optimization of Neuronal Models
 
 Installation
 ============
@@ -23,13 +23,14 @@ The following python libraries are required:
   - python
   - numpy 
   - scipy 
-  - matplotlib 
+  - matplotlib, to be replaced with plotly.
   - wxPython 
   - inspyred 
-  - pyelectro
+  - pyelectro, to be factored out.
+  - neuroelectro, to be factored in then out.
 
 The following libraries are recommended:
-  - neuron
+  - neuron-7.4 to be factored out
 
 You can get `numpy`, `scipy` and `inspyred` with `easy_install` or `pip` with the following command (for numpy):
 
@@ -119,7 +120,7 @@ The package was tested on the following systems:
       - wxPython 2.8.10.1
       - inspyred 1.0
       - pyelectro
-      - neuron 7.3
+      - neuron 7.2 (desirable NEURON-7.4)
 
     2. CentOS 6.4 (kernel 2.6.32, glibc 2.12)
       - python 2.6.6
@@ -129,9 +130,9 @@ The package was tested on the following systems:
       - wxPython 2.8.12.0
       - inspyred 1.0
       - pyelectro
-      - neuron 7.2
+      - neuron 7.2 (desirable NEURON-7.4)
     
-    3. Ubuntu 12.04.3 LTS (kernel 3.2.0-54-generic, glibc 2.15)
+    3. Ubuntu 14.04.3 LTS 
       - Python 2.7.3
       - numpy 1.7.0
       - scipy 0.11.0
@@ -139,27 +140,20 @@ The package was tested on the following systems:
       - wxPython 2.8.12.1
       - inspyred 1.0
       - pyelectro
-      - neuron 7.2
+      - neuron 7.2 (desirable NEURON-7.4)
+      
 
 Notes
 
     - Since Neuron with the python interpreter is not working perfectly on Windows, we recommend to use Ubuntu (installing and setting up a virtual os is not hard).
-    - inspyred requires a feature which is only included in python 2.7, but ther is a workaround for this problem: https://groups.google.com/forum/#!topic/inspyred/YwJb3ABVtL8
+    - inspyred requires a feature which is only included in python 2.7, but there is a workaround for this problem: https://groups.google.com/forum/#!topic/inspyred/YwJb3ABVtL8
     
 Developers
 ----------
 
-Project Leader:
-
-    - Szabolcs Káli:
-        kali@koki.hu
-
-Lead Developer:
-
-    - Peter Friedrich:
-        p.friedrich.m@gmail.com
     
 Contributors:
 
     - Mike Vella
+    - Russell Jarvis rjarvis@asu.edu
 

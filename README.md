@@ -1,6 +1,8 @@
 #Optimizer
 
-A recent fork of Optimizer by vellamike, which is no longer in development. Optimizer is a graphical tool for the optimization of Neuronal Models
+A recent fork of Optimizer (an optimization package) by vellamike, which is no longer in active development.
+
+Optimizer is a graphical tool for the optimization of Neuronal Models
 
 Installation
 ============

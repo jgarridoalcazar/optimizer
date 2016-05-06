@@ -1,4 +1,5 @@
-#Optimizer
+#A clone of Optimizer, currently in development.
+
 Optimizer is a graphical tool for the optimization of Neuronal Models
 
 Installation
@@ -10,7 +11,7 @@ Get a read only copy of optimizer
 Install `git` and type:
 
 
-    git clone https://github.com/pfriedrich/optimizer.git
+    git clone https://github.com/russelljjarvis/optimizer.git
 
 More information on this here: http://rogerdudler.github.com/git-guide/
 

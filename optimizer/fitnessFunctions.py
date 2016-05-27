@@ -859,6 +859,7 @@ class fF():
                     add_data = [spike_frame(n - window, self.thres, n, 1, n + window, self.thres) for n in self.reader.additional_data.get(k)]
                 except AttributeError:
                     add_data = None
+
                 args = {}
                 args["add_data"] = add_data
                 args["cov_m"] = self.cov_m
@@ -874,8 +875,13 @@ class fF():
                     if self.option.output_level == "1":
                         print features, weigths
                     for f, w in zip(features, weigths):
+                
                         if abs(len(self.model.record[0])-len(self.reader.data.GetTrace(k)))>1:
                             raise sizeError("model: " + str(len(self.model.record[0])) + ", target: " + str(len(self.reader.data.GetTrace(k))))
+                        import pdb
+                        pdb.set_trace()
+                        print args, k, self.reader.data.GetTrace(k)
+
                         temp_fit += w * (f(self.model.record[0],
                                                             self.reader.data.GetTrace(k), args))
                 else:

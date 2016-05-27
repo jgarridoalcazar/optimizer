@@ -124,13 +124,7 @@
     [0.20000000000000001]
   </stim_amp>
   <input_dir>
-    /home/russell/git/optimizer_orig/optimizer/tests/ca1_pc_simplification/Vinj48_2c_1.dat
-
- 
-
-    <!--mod_files
-
-    /home/kali/neuron/optimizer/szabolcsnak/ca1pc_simple/-->
+    /home/russell/git/optimizer_orig/optimizer/tests/ca1_pc_simplification/Vinj48_2c_1.dat 
   </input_dir>
   <input_freq>
     5000

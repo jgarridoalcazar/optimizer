@@ -57,9 +57,10 @@
   <stim_pos>
     0.5
   </stim_pos>
-  <dwell>
+  <!--<dwell>
     None
-  </dwell>
+    </dwell>-->
+  
   <input_size>
     1
   </input_size>
@@ -81,9 +82,11 @@
   <init_temp>
     None
   </init_temp>
-  <schedule>
+  <!--
+      <schedule>
     None
-  </schedule>
+    </schedule>
+  -->
   <stim_dur>
     600.0
   </stim_dur>
@@ -100,7 +103,7 @@
     1395931694.17
   </start_time_stamp>
   <model_spec_dir>
-    /home/kali/neuron/optimizer/szabolcsnak/ca1pc_simple/mod_files
+    /home/russell/git/optimizer_orig/optimizer/tests/ca1_pc_simplification
   </model_spec_dir>
   <acc>
     None
@@ -121,7 +124,13 @@
     [0.20000000000000001]
   </stim_amp>
   <input_dir>
-    /home/kali/neuron/optimizer/szabolcsnak/ca1pc_simple/Vinj48_2c_1.dat
+    /home/russell/git/optimizer_orig/optimizer/tests/ca1_pc_simplification/Vinj48_2c_1.dat
+
+ 
+
+    <!--mod_files
+
+    /home/kali/neuron/optimizer/szabolcsnak/ca1pc_simple/-->
   </input_dir>
   <input_freq>
     5000
@@ -139,15 +148,16 @@
     [0.40000000000000002, 0.20000000000000001, 0.10000000000000001, 0.10000000000000001, 0.10000000000000001, 0.10000000000000001]
   </weights>
   <model_path>
-    /home/kali/neuron/optimizer/szabolcsnak/ca1pc_simple/ca1pc_model.hoc
+    /home/russell/git/optimizer_orig/optimizer/tests/ca1_pc_simplification/ca1pc_model.hoc
   </model_path>
-  <final_temp>
+  <!--<final_temp>
     None
-  </final_temp>
+    </final_temp>
+  -->
   <run_controll_pos>
     0.5
   </run_controll_pos>
   <base_dir>
-    /home/kali/neuron/optimizer/szabolcsnak/ca1pc_simple
+    /home/russell/git/optimizer_orig/optimizer/tests/ca1_pc_simplification
   </base_dir>
 </settings>

@@ -71,7 +71,7 @@
     None
   </x_tol>
   <feats>
-    Spike Count, MSE (excl. spikes), Latency to 1st Spike, AP Overshoot, AHP Depth, AP Width
+    Spike count, MSE (excl. spikes), Latency to 1st spike, AHP depth, AP width
   </feats>
   <input_length>
     1000

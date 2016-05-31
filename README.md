@@ -143,6 +143,16 @@ The package was tested on the following systems:
       - inspyred 1.0
       - pyelectro
       - neuron 7.2 (desirable NEURON-7.4)
+
+      4. Ubuntu 16.04
+       - Python 2.7.3
+      - numpy 1.7.0
+      - scipy 0.11.0
+      - matplotlib 1.1.1rc
+      - wxPython 2.8.12.1
+      - inspyred 1.0
+      - pyelectro
+      -  NEURON-7.4
       
 
 Notes
@@ -157,5 +167,4 @@ Developers
 Contributors:
 
     - Mike Vella
-    - Russell Jarvis rjarvis@asu.edu
 

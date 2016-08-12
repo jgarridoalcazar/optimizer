@@ -311,7 +311,7 @@ class MyDialog2(wx.Dialog):
         self.container=[]
         self.vals=args[1]
         self.SetSize((400,min(100*n_o_params+1,600)))
-        _sizer=wx.GridSizer(n_o_params+1,2,20,5)
+        _sizer=wx.GridSizer(n_o_params+2,2,20,5)
 #        row_sizer=wx.BoxSizer(wx.HORIZONTAL)
 #        col_sizer1=wx.BoxSizer(wx.VERTICAL)
 #        col_sizer2=wx.BoxSizer(wx.VERTICAL)
@@ -1473,7 +1473,7 @@ class ffunctionLayer(wx.Frame):
         self.final_sizer.Add(self.column1, flag=wx.LEFT, border=10)
         self.final_sizer.Add(self.column2, flag=wx.LEFT, border=10)
         
-        self.SetSizer(self.final_sizer)
+        self.panel.SetSizer(self.final_sizer)
 
             
     def Normalize(self, e):
@@ -1622,7 +1622,7 @@ class algorithmLayer(wx.Frame):
         self.dd_evo.Append("Differential Evolution")
         self.dd_evo.Append("Random Search")
         #self.dd_evo.Select(0)
-        self.num_of_ctrl=3
+        self.num_of_ctrl=0
         self.dd_evo.Bind(wx.EVT_CHOICE, self.Algo_Select)
         self.column1.Add(descr22,flag=wx.UP,border=15)
         self.column1.Add(self.dd_evo,flag=wx.UP,border=5)
@@ -1649,8 +1649,9 @@ class algorithmLayer(wx.Frame):
         
         #self.column2.Add(self.sub_panel,flag=wx.EXPAND)
         self.final_sizer.Add(self.column1,flag=wx.LEFT,border=5)
+        self.final_sizer.Add(self.column2,flag=wx.RIGHT,border=5)
         
-        self.SetSizer(self.final_sizer)
+        self.panel.SetSizer(self.final_sizer)
         self.final_sizer.Layout()
         
     
@@ -1675,15 +1676,15 @@ class algorithmLayer(wx.Frame):
             self.column2.Hide(self.num_of_ctrl-1)
             self.column2.Remove(self.num_of_ctrl-1)
             self.num_of_ctrl-=1
-            self.SetSizer(self.final_sizer)
+            self.panel.SetSizer(self.final_sizer)
             self.final_sizer.Layout()
         self.final_sizer.Hide(1)
         self.final_sizer.Remove(1)
-        self.SetSizer(self.final_sizer)
+        self.panel.SetSizer(self.final_sizer)
         self.final_sizer.Layout()
 
         self.column2=wx.BoxSizer(wx.VERTICAL)
-        selected_algo=self.dd_evo.GetItems()[self.dd_evo.GetSelection()]
+        selected_algo=e.GetString()
         if selected_algo=="Classical EO":                             
             alg=[descr19,descr20,descr21]
         elif selected_algo=="Simulated Annealing":
@@ -1707,6 +1708,7 @@ class algorithmLayer(wx.Frame):
             self.algo_param.append((tmp,alg[i][0]))
             self.column2.Add(wx.StaticText(self.panel,label=alg[i][0]),flag=wx.UP,border=15)
             self.column2.Add(tmp,flag=wx.UP,border=5)
+            self.num_of_ctrl += 2
             value=self.core.option_handler.GetOptimizerOptions().get(alg[i][0])
             if value!=None:
                 tmp.SetValue(str(value))
@@ -1714,8 +1716,8 @@ class algorithmLayer(wx.Frame):
                 tmp.SetValue(str(self.kwargs.get("algo_options",{}).get(alg[i][0],None)))
         
         
-        self.final_sizer.Add(self.column2,flag=wx.LEFT,border=100)
-        self.SetSizer(self.final_sizer)
+        self.final_sizer.Add(self.column2,flag=wx.RIGHT,border=100)
+        self.panel.SetSizer(self.final_sizer)
         self.final_sizer.Layout()
         self.run.Enable()
         
@@ -2071,9 +2073,7 @@ class analyzisLayer(wx.Frame):
     
             #,marker='o', color='r', ls=''
             for i in range(len(self.core.option_handler.GetObjTOOpt())):
-                for points, fitness in zip(self.core.optimizer.final_pop[0][i],self.core.optimizer.final_pop[1][i]):
-                    a[i].plot(points[i],
-                                           fitness[0], marker='o', color='r', ls='')
+                a[i].plot(self.core.optimizer.final_pop[0].candidate[i],self.core.optimizer.final_pop[0].fitness, marker='o', color='r', ls='')
                 a[i].set_title(self.core.option_handler.GetObjTOOpt()[i].split()[-1])
                 a[i].relim()
                 a[i].autoscale(True,'both',False)

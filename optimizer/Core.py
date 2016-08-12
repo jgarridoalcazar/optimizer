@@ -408,7 +408,7 @@ class coreModul():
         self.optimizer.final_pop.sort(reverse=True)
         print self.optimizer.final_pop[0].candidate[0:len(self.option_handler.adjusted_params)],"fitness: ",self.optimizer.final_pop[0].fitness
         print "Optimization lasted for ", stop_time-start_time, " s"
-        self.feat_str=", ".join(map(lambda x: self.ffun_mapper[x.__name__],self.option_handler.feats))
+        self.feat_str=", ".join(self.option_handler.feats)
         
     def FourthStep(self,args={}):
         """

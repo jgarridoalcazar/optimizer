@@ -38,7 +38,7 @@ class baseOptimizer():
         except KeyError:
             sys.exit("Unknown fitness function!")
         try:
-            option_obj.feats=map(lambda x:self.fit_obj.calc_dict[x],option_obj.feats)
+            self.fit_obj.option.feats_func=map(lambda x:self.fit_obj.calc_dict[x],option_obj.feats)
         except KeyError:
             print "error with fitness function: ",option_obj.feats," not in: ",self.fit_obj.calc_dict.keys()
 

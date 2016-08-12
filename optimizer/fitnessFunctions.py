@@ -137,10 +137,7 @@ class fF():
         else:
             #cal the user def.ed function
             self.usr_fun(self, params)
-            
-            
-        
-        
+                    
     def modelRunner(self, candidates, act_trace_idx):
         """
         Prepares the model for the simulation, runs the simulation and records the appropriate variable.
@@ -843,7 +840,7 @@ class fF():
         
         """
         self.fitnes = []
-        features = self.option.feats
+        features = self.option.feats_func
         weigths = self.option.weights
         temp_fit = 0
         window = int(self.option.spike_window)
@@ -878,9 +875,9 @@ class fF():
                 
                         if abs(len(self.model.record[0])-len(self.reader.data.GetTrace(k)))>1:
                             raise sizeError("model: " + str(len(self.model.record[0])) + ", target: " + str(len(self.reader.data.GetTrace(k))))
-                        import pdb
-                        pdb.set_trace()
-                        print args, k, self.reader.data.GetTrace(k)
+                        #import pdb
+                        #pdb.set_trace()
+                        #print args, k, self.reader.data.GetTrace(k)
 
                         temp_fit += w * (f(self.model.record[0],
                                                             self.reader.data.GetTrace(k), args))
@@ -904,7 +901,7 @@ class fF():
             for every function instance i.e every component
         
         """
-        features = self.option.feats
+        features = self.option.feats_func
         weigths = self.option.weights
         fit_list = []
         window = self.option.spike_window

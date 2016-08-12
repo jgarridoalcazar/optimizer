@@ -99,6 +99,7 @@ class optionHandler(object):
         self.covariance_flag=0
         #self.ffunction=None #other parameters might be necessary
         self.feats=[]
+        self.feat_func=[]
         self.weights=[]
         post=dir(self)
         self.class_content=list(set(post)-set(prev))
@@ -127,8 +128,10 @@ class optionHandler(object):
         for m in self.class_content:
             child=se(root,m)
             try:
-                if m=="feats":
+                if m=="feats_func":
                     child.text=", ".join(map(lambda x:f_mapper[x.__name__],self.__getattribute__(m)))
+                elif m=="feats":
+                    child.text=", ".join(self.__getattribute__(m))
                 else:
                     child.text=str(self.__getattribute__(m).__str__())
                     if child.text=='':
